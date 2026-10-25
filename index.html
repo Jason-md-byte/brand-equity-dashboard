@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Score a brand on Keller's CBBE pyramid, see radar and pyramid charts, get plain-English recommendations and export a markdown audit." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 29 28H3z' fill='%230b5656'/%3E%3C/svg%3E" />
+    <title>CBBE Brand Equity Dashboard</title>
+  </head>
+  <body>
+    <a class="skip" href="#results">Skip to results</a>
+    <header class="site-header">
+      <div class="wrap">
+        <p class="eyebrow">Keller's CBBE model</p>
+        <h1>Brand equity dashboard</h1>
+        <p class="lede">
+          Score a brand on the six layers of the customer-based brand equity pyramid. See where it is strong,
+          where it is thin, and what to do about it first.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap layout">
+      <section class="card" aria-labelledby="inputs-title">
+        <h2 id="inputs-title">1. Score the brand</h2>
+        <p class="hint" id="example-note">
+          Preloaded with a fictional example brand. Replace the name and move the sliders to audit your own.
+        </p>
+
+        <div class="field">
+          <label for="brand-name">Brand name</label>
+          <input id="brand-name" type="text" autocomplete="off" maxlength="80" />
+        </div>
+
+        <div id="layer-controls" class="controls"></div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="reset-btn">Reset to example</button>
+        </div>
+      </section>
+
+      <section id="results" class="results" aria-labelledby="results-title" tabindex="-1">
+        <div class="card summary">
+          <div>
+            <h2 id="results-title">2. Your audit</h2>
+            <p class="summary-brand" id="summary-brand"></p>
+          </div>
+          <p class="overall" aria-live="polite">
+            <span class="overall-num" id="overall-num"></span><span class="overall-of">/ 10</span>
+            <span class="overall-label">overall</span>
+          </p>
+        </div>
+
+        <div class="charts">
+          <figure class="card chart">
+            <figcaption>Pyramid</figcaption>
+            <svg id="pyramid" viewBox="0 0 400 300" role="img" aria-labelledby="pyramid-title pyramid-desc"></svg>
+          </figure>
+          <figure class="card chart">
+            <figcaption>Radar</figcaption>
+            <svg id="radar" viewBox="0 0 440 330" role="img" aria-labelledby="radar-title radar-desc"></svg>
+          </figure>
+        </div>
+
+        <div class="card">
+          <h3>Where to focus first</h3>
+          <ol class="recs" id="recs"></ol>
+        </div>
+
+        <div class="card">
+          <h3>Imbalances to watch</h3>
+          <ul class="notes" id="imbalances"></ul>
+        </div>
+
+        <div class="card export">
+          <h3>3. Export</h3>
+          <p class="hint">Download the audit as markdown, or copy it to paste into your notes.</p>
+          <div class="actions">
+            <button type="button" class="btn" id="download-btn">Download .md</button>
+            <button type="button" class="btn btn-ghost" id="copy-btn">Copy markdown</button>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          Framework: Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity.
+          <em>Journal of Marketing, 57</em>(1), 1-22. Scores are self-assessed; this is a thinking tool, not market research.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
