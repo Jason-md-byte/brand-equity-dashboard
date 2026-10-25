@@ -4,7 +4,11 @@ A small static web app for auditing a brand against Keller's customer-based bran
 
 It ships preloaded with **Brindlewick Outfitters**, a fictional outdoor-gear brand invented for this demo. It is not a real company.
 
-![Dashboard screenshot](docs/screenshot.png)
+![Dashboard on desktop: score sliders, pyramid and radar charts, and ranked recommendations](docs/screenshot.png)
+
+It also works at phone width (375px). The charts and results stack into a single column:
+
+<img src="docs/screenshot-mobile.png" alt="Dashboard on a phone: overall score, pyramid and radar charts" width="320">
 
 ## The CBBE model in three sentences
 
